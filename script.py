@@ -198,12 +198,12 @@ def realizar_busqueda():
 
 
 
-while True:
-    try:
-        realizar_busqueda()
-    except Exception as e:
-        print e
-        pass
+
+try:
+    realizar_busqueda()
+except Exception as e:
+    print e
+    pass
 
 
 #realizar_busqueda()
