@@ -10,7 +10,6 @@ import time
 CHROMEDRIVER_PATH="/app/.chromedriver/bin/chromedriver"
 GOOGLE_CHROME_BIN="/app/.apt/usr/bin/google-chrome"
 
-print "jejeje"
 
 # Realiza una busqueda por nombre en milanuncios
 # Devuelve el enlace encontrado o 0 en caso de no encontrarlo
@@ -164,7 +163,7 @@ def realizar_busqueda():
         milanuncios = deseo["milanuncios"]
         cash = deseo["cash"]
         id = deseo["_id"]
-
+        print("deseo: ",articulo)
         if wallapop:
             links = buscar_wallapop(articulo, max_price, driver, low_price)
             if links != 0:
@@ -190,14 +189,17 @@ def realizar_busqueda():
         link = seg["URL"]
         precio = seg["price"]
         id = seg["_id"]
+        print("seg: ",link)
         res = check_precio(link, driver)
+        
+        print("res: ",res)
         if res != 0:
             crear_valor_seg(id, res)
             if res <= precio and not existe_aviso(link, id):
                 crear_aviso(link, id)
 
 
-
+print("Inicio")
 
 try:
     realizar_busqueda()
