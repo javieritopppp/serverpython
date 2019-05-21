@@ -197,6 +197,8 @@ def realizar_busqueda():
             crear_valor_seg(id, res)
             if res <= precio and not existe_aviso(link, id):
                 crear_aviso(link, id)
+                
+    driver.close()
 
 
 print("Inicio")
