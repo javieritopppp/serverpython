@@ -7,6 +7,9 @@ import string
 
 import time
 
+CHROMEDRIVER_PATH="/app/.chromedriver/bin/chromedriver"
+GOOGLE_CHROME_BIN="/app/.apt/usr/bin/google-chrome"
+
 print "jejeje"
 
 # Realiza una busqueda por nombre en milanuncios
