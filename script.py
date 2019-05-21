@@ -144,7 +144,7 @@ def crear_valor_seg(id, valor):
     mycol.insert_one(mydict)
 
 def realizar_busqueda():
-    options = selenium.webdriver.ChromeOptions()
+    options = webdriver.ChromeOptions()
     options.binary_location = GOOGLE_CHROME_BIN
     options.add_argument('--disable-gpu')
     options.add_argument('--no-sandbox')
