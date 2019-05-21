@@ -1,4 +1,4 @@
-#from selenium import webdriver
+import webdriver
 from urlparse import urlparse
 import datetime
 #import pymongo
