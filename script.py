@@ -155,6 +155,7 @@ def realizar_busqueda():
     deseos = descargar_deseos()
     seguimientos = descargar_seguimientos()
 
+    print "Buscando en Deseos"
     for deseo in deseos.find():
         articulo = deseo["articulo"]
         low_price = deseo["lowPrice"]
@@ -185,27 +186,33 @@ def realizar_busqueda():
                     if not existe_aviso(link.get_attribute("href"), id):
                         crear_aviso(link.get_attribute("href"), id)
 
+    print " "
+    print "Buscando en ValorSeg"
     for seg in seguimientos.find():
         link = seg["URL"]
         precio = seg["price"]
         id = seg["_id"]
-        print("seg: ",link)
+        print "seg: ",link 
         res = check_precio(link, driver)
         
         print "res: ",res
+        print " "
         if res != 0:
             crear_valor_seg(id, res)
             if res <= precio and not existe_aviso(link, id):
                 crear_aviso(link, id)
                 
     driver.close()
-
+    print "Fin busqueda"
+    print " "
+    print " "
 
 print "Inicio" 
 
 while True:
     try:
         realizar_busqueda()
+        time.sleep(240)
     except Exception as e:
         print e
         pass
