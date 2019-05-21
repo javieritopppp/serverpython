@@ -203,7 +203,7 @@ def realizar_busqueda():
 
 print "Inicio" 
 
-while true:
+while True:
     try:
         realizar_busqueda()
     except Exception as e:
