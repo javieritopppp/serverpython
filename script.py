@@ -163,7 +163,7 @@ def realizar_busqueda():
         milanuncios = deseo["milanuncios"]
         cash = deseo["cash"]
         id = deseo["_id"]
-        print("deseo: ",articulo)
+        print "deseo: ",articulo
         if wallapop:
             links = buscar_wallapop(articulo, max_price, driver, low_price)
             if links != 0:
@@ -192,7 +192,7 @@ def realizar_busqueda():
         print("seg: ",link)
         res = check_precio(link, driver)
         
-        print("res: ",res)
+        print "res: ",res
         if res != 0:
             crear_valor_seg(id, res)
             if res <= precio and not existe_aviso(link, id):
@@ -201,13 +201,14 @@ def realizar_busqueda():
     driver.close()
 
 
-print("Inicio")
+print "Inicio" 
 
-try:
-    realizar_busqueda()
-except Exception as e:
-    print e
-    pass
+while true:
+    try:
+        realizar_busqueda()
+    except Exception as e:
+        print e
+        pass
 
 
 #realizar_busqueda()
