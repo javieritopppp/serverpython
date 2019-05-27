@@ -198,7 +198,7 @@ def realizar_busqueda():
         print "res: ",res
         print " "
         if res != 0:
-            crear_valor_seg(id, res)
+            crear_valor_seg(id, res.replace(".",""))
             if res <= precio and not existe_aviso(link, id):
                 crear_aviso(link, id)
                 
